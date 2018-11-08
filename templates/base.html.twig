@@ -6,7 +6,10 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <a href="{{ path('streamer_index') }}">Стримеры</a><br>
+            <a href="{{ path('news_index') }}">Новости</a>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

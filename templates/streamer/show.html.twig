@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Streamer{% endblock %}
+
+{% block body %}
+    <h1>Streamer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ streamer.id }}</td>
+            </tr>
+            <tr>
+                <th>Nickname</th>
+                <td>{{ streamer.nickname }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ streamer.text }}</td>
+            </tr>
+            <tr>
+                <th>Fotos</th>
+                <td>{{ streamer.fotos ? streamer.fotos|join(', ') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('streamer_index') }}">back to list</a>
+
+    <a href="{{ path('streamer_edit', {'id': streamer.id}) }}">edit</a>
+
+    {{ include('streamer/_delete_form.html.twig') }}
+{% endblock %}
